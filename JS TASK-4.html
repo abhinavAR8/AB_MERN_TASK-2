@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Task1</title>
+</head>
+<body>
+    <button onclick="dt()">Show Date</button>
+    <p id="first"></p>
+    <br>
+    <br>
+    <button onclick="ti()">Show Time</button>
+    <p id="second"></p>
+</body>
+<script>
+    function dt() {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth(); 
+        let dd = today.getDate();
+        if (dd < 10) dd = '0' + dd;
+        var monthNames = [
+    "January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December"
+  ];
+        const formattedToday = dd + '/' + monthNames[mm] + '/' + yyyy;
+        document.getElementById('first').innerHTML = formattedToday;
+    }
+    function ti() {
+        const x = new Date();
+        document.getElementById("second").innerHTML = x;
+    }
+
+</script>
+
+</html>

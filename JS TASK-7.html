@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSTask8</title>
+  <style>
+    body {
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -30px;
+      font-size: 30px;
+      color: #fff;
+      animation: snowfall 5s linear infinite;
+    }
+
+    @keyframes snowfall {
+      0% {
+        transform: translateY(-50px);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="snowfall"></div>
+  <button id="startBtn">Start Animation</button>
+  <button id="stopBtn">Stop Animation</button>
+
+  <script>
+    let animationIntervalId;
+
+    function createSnowflake() {
+      const snowflake = document.createElement('span');
+      snowflake.classList.add('snowflake');
+      snowflake.innerHTML = '&#10052;';
+      snowflake.style.left = Math.random() * window.innerWidth + 'px';
+      document.getElementById('snowfall').appendChild(snowflake);
+
+      setTimeout(() => {
+        snowflake.remove();
+      }, 5000);
+    }
+
+    function startSnowfall() {
+      animationIntervalId = setInterval(() => {
+        createSnowflake();
+      }, 200);
+    }
+
+    function stopSnowfall() {
+      clearInterval(animationIntervalId);
+      document.getElementById('snowfall').innerHTML = '';
+    }
+
+    document.getElementById('startBtn').addEventListener('click', startSnowfall);
+    document.getElementById('stopBtn').addEventListener('click', stopSnowfall);
+  </script>
+</body>
+</html>

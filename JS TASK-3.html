@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS_Task7</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color:rgb(37, 255, 255);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label>Enter Number 1:</label>
+    <input type="number" id="N1" placeholder="Enter 1st Number"><br><br>
+    <label>Enter Number 2:</label>
+    <input type="number" id="N2" placeholder="Enter 2nd Number">
+    <br><br>
+    <button onclick="Multiply()">Multiply</button>
+    <button onclick="Divide()">Divide</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function Multiply() {
+      var number1 = parseInt(document.getElementById('N1').value);
+
+      var number2 = parseInt(document.getElementById('N2').value);
+
+      var m = parseInt(number1*number2);
+      document.getElementById('result').textContent = "The Result is : " + m;
+    }
+
+    function Divide() {
+      var number3 = parseInt(document.getElementById('N1').value);
+
+      var number4 = parseInt(document.getElementById('N2').value);
+
+      var n = parseInt(number3/number4);
+      document.getElementById('result').textContent = "The Result is : " + n;
+    }
+  </script>
+</body>
+</html>

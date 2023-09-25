@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS_Task5</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color:rgb(37, 255, 255);
+    }
+    h1, input, button, p {
+      margin-bottom: 10px;
+    }
+    input[type="number"] {
+      padding: 5px;
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Reverse Number</h1>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button onclick="reverseNumber()">Reverse</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function reverseNumber() {
+      var number = parseInt(document.getElementById('inputNumber').value);
+      var reversed = parseInt(number.toString().split('').reverse().join(''));
+      document.getElementById('result').textContent = "Reversed Number: " + reversed;
+    }
+  </script>
+</body>
+</html>

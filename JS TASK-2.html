@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS_Task6</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color:rgb(37, 255, 255);
+    }
+    h1, input, button, p {
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sort String</h1>
+    <input type="text" id="inputString" placeholder="Enter a String">
+    <button onclick="sortString()">Sort</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function sortString() {
+      var inputString = document.getElementById('inputString').value;
+      var sortedString = inputString.split('').sort().join('');
+      document.getElementById('result').textContent = "Sorted String: " + sortedString;
+    }
+  </script>
+</body>
+</html>

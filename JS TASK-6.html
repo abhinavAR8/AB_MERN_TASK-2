@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Task4</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body {
+            background-color: #fafafa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive;
+        }
+        .input-field {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .input-field img {
+            width: 20px;
+            margin-right: 10px;
+        }
+        .input-field input[type="text"],
+        .input-field input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .sign-up {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .sign-up a {
+            color: #3897f0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Instagram</div>
+        <form id="login-form">
+            <div class="input-field">
+                <img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt="Username">
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div class="input-field">
+                <img src="https://cdn-icons-png.flaticon.com/128/5280/5280006.png" alt="Password">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <div class="error-message" id="username-error"></div>
+            <div class="error-message" id="password-error"></div>
+            <button class="login-button" onclick="validateForm(event)">Log in</button>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+        </form>
+        <div class="sign-up">
+            Don't have an account? <a href="#">Sign up here</a>
+        </div>
+    </div>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            document.getElementById('username-error').innerHTML = '';
+            document.getElementById('password-error').innerHTML = '';
+            if (username === '') {
+                document.getElementById('username-error').innerHTML = 'Please enter a username.';
+            }
+            if (password === '') {
+                document.getElementById('password-error').innerHTML = 'Please enter a password.';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Task3</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><label for="nme">Name:</label></td>
+            <td><input type="text" id="name"></td>
+            <td id="n"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="eml">Email:</label></td>
+            <td><input type="email" id="email"></td>
+            <td id="e"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td><label for="web">Website:</label></td>
+            <td><input type="text" id="website"></td>
+            <td id="w"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td><label for="msg">Message:</label></td>
+            <td><textarea name="msg" id="message" cols="30" rows="6"></textarea></td>
+            <td id="m"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="validate()">Submit</button></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    function validate() {
+        var a = document.getElementById("name").value;
+        var b = document.getElementById("email").value;
+        var c = document.getElementById("website").value;
+        var d = document.getElementById("message").value;
+
+        if (a == "" && b == "" && c == "" && d == "") {
+            document.getElementById("n").innerHTML = "This field is required";
+            document.getElementById("e").innerHTML = "A valid email address is required";
+            document.getElementById("w").innerHTML = "A valid url is required";
+            document.getElementById("m").innerHTML = "This field is required";
+
+            document.getElementById("name").style.border = "2px solid red";
+            document.getElementById("email").style.border = "2px solid red";
+            document.getElementById("website").style.border = "2px solid red";
+            document.getElementById("message").style.border = "2px solid red";
+
+            document.getElementById("n").style.color = "red";
+            document.getElementById("e").style.color = "red";
+            document.getElementById("m").style.color = "red";
+            document.getElementById("w").style.color = "red";
+
+        }
+    }
+</script>
+
+</html>
